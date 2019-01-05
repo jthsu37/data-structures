@@ -6,16 +6,6 @@ class Stack {
     this.keyCount = 0;
   }
 
-  get pusher() {
-    return this.push();
-  }
-  get popper() {
-    return this.pop(value);
-  }
-  get sizer() {
-    return this.size();
-  }
-
   push(value) {
     var temp = this.keyCount;
     this[temp] = value;
