@@ -4,12 +4,29 @@ var LinkedList = function() {
   list.tail = null;
 
   list.addToTail = function(value) {
+    //list.tail.value
+    list.tail = Node(value);
+    if (list.head === null) {
+      list.head = Node(value);
+    } else {
+      list.head.next = list.tail;
+    }
   };
 
   list.removeHead = function() {
+    var temp = list.head.value;
+    list.head = list.head.next;
+    return temp;
   };
 
   list.contains = function(target) {
+    var stringList = JSON.stringify(list);
+    for (var i = 0; i < stringList.length; i++) {
+      if (target.toString() === stringList[i]) {
+        return true;
+      }
+    }
+    return false;
   };
 
   return list;
