@@ -52,4 +52,11 @@ describe('linkedList', function() {
   });
 
   // add more tests here to test the functionality of linkedList
+  it('should handle 2 digit numbers', function() {
+    linkedList.addToTail(6);
+    linkedList.addToTail(10);
+    expect(linkedList.contains(6)).to.equal(true);
+    expect(linkedList.contains(10)).to.equal(true);
+    expect(linkedList.contains(1)).to.equal(false);
+  });
 });
