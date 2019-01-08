@@ -1,20 +1,20 @@
 var Set = function() {
   var set = Object.create(setPrototype);
-  set.storage = {}; // fix me
+  set._storage = {}; // fix me
   return set;
 };
 
 var setPrototype = {};
 
 setPrototype.add = function(item) {
-  if (this[item] !== item.toString()) {
-    this[item] = item.toString();
+  if (this[item] !== item) {
+    this[item] = item;
   }
 };
 
 setPrototype.contains = function(item) {
   for (var key in this) {
-    if (key === item) {
+    if (this[key] === item) {
       return true;
     }
   }
