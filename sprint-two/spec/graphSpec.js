@@ -68,4 +68,11 @@ describe('graph', function() {
     expect(graph.hasEdge(3, 5)).to.equal(true);
     expect(graph.hasEdge(5, 5)).to.equal(true);
   });
+
+  it('should handle strings', function() {
+    graph.addNode('five');
+    graph.addNode('four');
+    graph.addEdge('five', 'four');
+    expect(graph.hasEdge('five', 'four')).to.equal(true);
+  });
 });
