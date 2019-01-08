@@ -41,4 +41,11 @@ describe('tree', function() {
     expect(tree.contains(8)).to.equal(true);
   });
 
+  it('should handle 2 digit numbers', function() {
+    tree.addChild(10);
+    tree.children[0].addChild(20);
+    expect(tree.contains(10)).to.equal(true);
+    expect(tree.contains(20)).to.equal(true);
+    expect(tree.contains(1)).to.equal(false);
+  });
 });
