@@ -12,21 +12,21 @@ var LinkedList = function() {
       list.head.next = list.tail;
     }
   };
-
   list.removeHead = function() {
     var temp = list.head.value;
     list.head = list.head.next;
     return temp;
   };
-
   list.contains = function(target) {
-    var stringList = JSON.stringify(list);
-    for (var i = 0; i < stringList.length; i++) {
-      if (target.toString() === stringList[i]) {
+    var recursion = function(target, list) {
+      if (list.value === target) {
         return true;
+      } else if (list.next !== null) {
+        return recursion(target, list.next);
       }
+      return false;
     }
-    return false;
+    return recursion(target, this.head);
   };
 
   return list;
