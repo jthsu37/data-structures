@@ -16,7 +16,7 @@ searchMethods.insert = function(value) {
       } else {
         tree.left = {value: value};
       }
-    } else {
+    } else if (value > tree.value) {
       if (tree.right) {
         recursion(value, tree.right);
       } else {
